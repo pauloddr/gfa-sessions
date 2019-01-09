@@ -1,0 +1,51 @@
+{
+  "name": "@gfa/sessions",
+  "version": "0.2.0",
+  "description": "Build a user authentication API using Google HTTP Functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard --fix && nyc mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pauloddr/gfa-sessions.git"
+  },
+  "author": "Panayotis Procopiou <gfa@pauloddr.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pauloddr/gfa-sessions/issues"
+  },
+  "homepage": "https://github.com/pauloddr/gfa-sessions#readme",
+  "dependencies": {
+    "@gfa/bcrypt-adapter": "github:pauloddr/gfa-bcrypt-adapter",
+    "@gfa/client-sessions-adapter": "github:pauloddr/gfa-client-sessions-adapter",
+    "@gfa/core": "github:pauloddr/gfa-core",
+    "@gfa/firestore-adapter": "github:pauloddr/gfa-firestore-adapter"
+  },
+  "devDependencies": {
+    "@firebase/testing": "0.5.2",
+    "body-parser": "1.18.3",
+    "chai": "4.2.0",
+    "chai-http": "4.2.1",
+    "coveralls": "3.0.2",
+    "dirty-chai": "2.0.1",
+    "express": "4.16.4",
+    "mocha": "5.2.0",
+    "nyc": "13.1.0",
+    "standard": "*"
+  },
+  "nyc": {
+    "include": [
+      "index.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary",
+      "html"
+    ]
+  },
+  "standard": {
+    "env": "mocha"
+  }
+}
